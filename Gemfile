@@ -5,7 +5,7 @@ ruby '2.6.1'
 
 
 gem 'algorithmia'
-
+gem 'dotenv-rails'
 
 
 
