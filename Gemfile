@@ -6,6 +6,7 @@ ruby '2.6.1'
 
 gem 'algorithmia'
 gem 'dotenv-rails'
+gem 'httparty', '~> 0.13.7'
 
 
 
