@@ -27,9 +27,8 @@ class VideosController < ApplicationController
 
     frames = response.parsed_response["result"]["output_collection_frames"]
 
-    frame_snapshots = []
 
-    frames.map {|frame| frame_snapshots << frame.gsub('data://.my/scenegrabs/', 'https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/') }
+
 
 
 
@@ -39,10 +38,11 @@ class VideosController < ApplicationController
 
     frames = ["data://.my/scenegrabs/00:00:05.640.png", "data://.my/scenegrabs/00:00:07.320.png", "data://.my/scenegrabs/00:00:09.760.png", "data://.my/scenegrabs/00:00:11.840.png", "data://.my/scenegrabs/00:00:15.800.png", "data://.my/scenegrabs/00:00:18.960.png", "data://.my/scenegrabs/00:00:21.640.png", "data://.my/scenegrabs/00:00:27.240.png", "data://.my/scenegrabs/00:00:30.520.png"]
 
+    frame_snapshots = []
+    cleaned_frames = frames.map {|frame| frame_snapshots << frame.gsub('data://.my/scenegrabs/', 'https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/') }
 
 
-
-
+    byebug
 
 
 
