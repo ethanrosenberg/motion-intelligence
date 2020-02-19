@@ -7,7 +7,7 @@ ruby '2.6.1'
 gem 'algorithmia'
 gem 'dotenv-rails'
 gem 'httparty', '~> 0.13.7'
-
+gem 'rack-cors'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
