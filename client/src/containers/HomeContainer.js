@@ -51,11 +51,13 @@ class HomeContainer extends React.Component {
   fetch('http://localhost:3000/api/v1/new_search', headers)
     .then(r => r.json())
     .then(response => {
-      console.log(response)
+      console.log("Results...")
 
       this.setState({
-          frames: [...response.results]
+          frames: [...response]
         })
+
+
 
     })
 
@@ -96,10 +98,11 @@ const handleSearchSubmit = event => {
             <br></br>
             <br></br>
 
+
             { this.state.frames.length > 0
               ?
               this.state.frames.map((item, key) =>
-                <img key={key} height='300px' align="center" src={item}/>
+                <img key={key} height='200px' align="center" src={item} />
               )
               :
               null
