@@ -3,6 +3,10 @@ import React from 'react';
 
 import Container from 'react-bootstrap/Container';
 import { Form, Button, FormControl, InputGroup } from 'react-bootstrap'
+import PulseLoader from "react-spinners/PulseLoader";
+
+
+
 
 
 class HomeContainer extends React.Component {
@@ -10,7 +14,8 @@ class HomeContainer extends React.Component {
     super()
     this.state = {
       frames: '',
-      url: ''
+      url: '',
+      loading: false
     }
 
   }
@@ -22,6 +27,11 @@ class HomeContainer extends React.Component {
    }
 
    render() {
+
+     // Can be a string as well. Need to ensure each key-value pair ends with ;
+  const override = {
+    textAlign: 'center'
+  };
 
   const formInputStyle = {
     backgroundColor: this.state.recursive ? '#c6e2ff' : '#FFFFFF',
@@ -54,7 +64,8 @@ class HomeContainer extends React.Component {
       console.log("Results...")
 
       this.setState({
-          frames: [...response]
+          frames: [...response],
+          loading: false
         })
 
 
@@ -66,6 +77,10 @@ class HomeContainer extends React.Component {
 const handleSearchSubmit = event => {
 
   event.preventDefault()
+
+  this.setState({
+    loading: true
+  })
 
   search()
 
@@ -98,8 +113,34 @@ const handleSearchSubmit = event => {
             <br></br>
             <br></br>
 
+            {
+              this.state.loading === true
+              ?
+              <>
+              <br></br>
+              <br></br>
+              <center>
+              <PulseLoader
+                css={override}
+                size={75}
+                //size={"150px"} this also works
+                color={"#c2b5ff"}
+                loading={this.state.loading}
+              /></center></>
+              :
+              null
+            }
 
-            { this.state.frames.length > 0
+
+
+
+
+
+
+
+            {
+
+              this.state.frames.length > 0
               ?
               this.state.frames.map((item, key) =>
                 <img key={key} height='200px' align="center" src={item} />

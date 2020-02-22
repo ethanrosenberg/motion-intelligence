@@ -45,10 +45,28 @@ class VideosController < ApplicationController
 
     search_url = params[:url]
 
-    frames = process_video(search_url)
+    #frames = process_video(search_url)
+    #response = HTTParty.get('https://ethanrosenberg.pythonanywhere.com',
+    #{
+    #  :headers => { 'Content-Type' => 'application/json' }
+    #})
 
-    test_frames = ["https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:05.640.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:07.320.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:09.760.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:11.840.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:15.800.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:18.960.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:21.640.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:27.240.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:30.520.png"]
-    render json: {results: frames}
+    data = ["https://storage.cloud.google.com/snapshots-storage/image-nfqkbrodno", "https://storage.cloud.google.com/snapshots-storage/image-klqgbrxggv", "https://storage.cloud.google.com/snapshots-storage/image-hcjpzyplfu", "https://storage.cloud.google.com/snapshots-storage/image-zzhhuuvfbw", "https://storage.cloud.google.com/snapshots-storage/image-qvztudibtd", "https://storage.cloud.google.com/snapshots-storage/image-xcpqdmmhxh", "https://storage.cloud.google.com/snapshots-storage/image-fnjmurlafh", "https://storage.cloud.google.com/snapshots-storage/image-tagybklbab", "https://storage.cloud.google.com/snapshots-storage/image-omnhjgsvnp", "https://storage.cloud.google.com/snapshots-storage/image-itxpfieywc", "https://storage.cloud.google.com/snapshots-storage/image-aeywlqruwg", "https://storage.cloud.google.com/snapshots-storage/image-xjdzeomsgw", "https://storage.cloud.google.com/snapshots-storage/image-thvzoqdcgh", "https://storage.cloud.google.com/snapshots-storage/image-fzzuzhpftr", "https://storage.cloud.google.com/snapshots-storage/image-wgfldgksbg", "https://storage.cloud.google.com/snapshots-storage/image-cvyehwoymb", "https://storage.cloud.google.com/snapshots-storage/image-pcblhlainp", "https://storage.cloud.google.com/snapshots-storage/image-nmbgxatpkf", "https://storage.cloud.google.com/snapshots-storage/image-binwhsqbfr", "https://storage.cloud.google.com/snapshots-storage/image-ucatbyxush", "https://storage.cloud.google.com/snapshots-storage/image-lcijiuqvar", "https://storage.cloud.google.com/snapshots-storage/image-bhtepuuprz", "https://storage.cloud.google.com/snapshots-storage/image-dzzzofezqs", "https://storage.cloud.google.com/snapshots-storage/image-qdgmnxfpwv", "https://storage.cloud.google.com/snapshots-storage/image-cbwkxxdxqi", "https://storage.cloud.google.com/snapshots-storage/image-xbbyrnwjvd", "https://storage.cloud.google.com/snapshots-storage/image-vkglrfyhqa", "https://storage.cloud.google.com/snapshots-storage/image-donwtbyzbc", "https://storage.cloud.google.com/snapshots-storage/image-qurpstrzup", "https://storage.cloud.google.com/snapshots-storage/image-qfmhvfyikc"]
+
+    sleep 3
+    
+    render json: data
+    #render json: response.parsed_response
+
+
+
+
+
+
+
+
+    #test_frames = ["https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:05.640.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:07.320.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:09.760.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:11.840.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:15.800.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:18.960.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:21.640.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:27.240.png", "https://algorithmia.com/v1/data/ethanrosenberg/scenegrabs/00:00:30.520.png"]
+    #render json: {results: frames}
 
   end
 
