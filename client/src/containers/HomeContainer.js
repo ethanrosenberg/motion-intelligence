@@ -3,9 +3,8 @@ import React from 'react';
 
 import Container from 'react-bootstrap/Container';
 import { Form, Button, FormControl, InputGroup } from 'react-bootstrap'
-import PulseLoader from "react-spinners/PulseLoader";
-
-
+//simport PulseLoader from "react-spinners/PulseLoader
+import Loader from '../components/Loader.js'
 
 
 
@@ -120,13 +119,7 @@ const handleSearchSubmit = event => {
               <br></br>
               <br></br>
               <center>
-              <PulseLoader
-                css={override}
-                size={75}
-                //size={"150px"} this also works
-                color={"#c2b5ff"}
-                loading={this.state.loading}
-              /></center></>
+              <Loader  /></center></>
               :
               null
             }
